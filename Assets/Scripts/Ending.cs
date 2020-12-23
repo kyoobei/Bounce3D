@@ -2,7 +2,7 @@
 
 public class Ending : MonoBehaviour
 {
-    [SerializeField] GameObject m_endingUI;
+    [SerializeField] GameObject m_endingUI = null;
     [SerializeField] private PlatformCollision m_platformCollision = null;
     private void OnEnable()
     {
