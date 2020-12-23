@@ -38,7 +38,6 @@ public class DisappearingPlatform : MovingPlatform, IDisappear
     #region IDisappear Implementation
     public void Disappear()
     {
-        m_platformCollision.ForceRemoveParent();
         gameObject.SetActive(false);
     }
     #endregion
