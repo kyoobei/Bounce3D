@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DisappearingPlatform : MovingPlatform, IDisappear
 {
-    [SerializeField] private float m_disappearTimer;
-    [SerializeField] private PlatformCollision m_platformCollision;
+    [SerializeField] private float m_disappearTimer = 0.0f;
+    [SerializeField] private PlatformCollision m_platformCollision = null;
 
     private bool m_startCountdown = false;
     private void OnEnable()
@@ -16,7 +16,7 @@ public class DisappearingPlatform : MovingPlatform, IDisappear
     {
         m_platformCollision.OnPlayerEnter -= StartCountdown;
     }
-    protected override void Update()
+    private void Update()
     {
         if (m_startCountdown)
         {
@@ -29,7 +29,6 @@ public class DisappearingPlatform : MovingPlatform, IDisappear
                 Disappear();
             }
         }
-        base.Update();
     }
     private void StartCountdown()
     {
