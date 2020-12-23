@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     }
     public void Shoot()
     {
+        m_bulletRigidBody.velocity = Vector3.zero; //resets previous velocity
         m_bulletRigidBody.AddForce(Vector3.forward * m_bulletStrength, ForceMode.Impulse);
         Invoke("Return", TIMER_RETURN);
     }
