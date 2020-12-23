@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
             m_rigidBody.AddForce(new Vector3(0, m_jumpPower, 0), ForceMode.Impulse);
         }
     }
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, m_groundDistance + MIN_GROUND_DISTANCE);
     }
