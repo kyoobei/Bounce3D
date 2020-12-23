@@ -66,5 +66,9 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics.Raycast(transform.position, Vector3.down, m_groundDistance + MIN_GROUND_DISTANCE);
     }
+    public void ResetVelocity()
+    {
+        m_rigidBody.velocity = Vector3.zero;
+    }
     #endregion
 }

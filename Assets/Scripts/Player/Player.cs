@@ -6,7 +6,7 @@ public class Player : MonoBehaviour, IDisappear
 {
     [SerializeField] private float m_ungroundedTimer = 5.0f;
     private PlayerMovement m_playerMovement = null;
-    private Vector3 m_savedPlayerPosition = Vector3.zero;
+    [SerializeField] private Vector3 m_savedPlayerPosition = Vector3.zero;
     private float m_unGroundedTimerHolder = 0.0f;
     private void Awake()
     {
@@ -14,6 +14,7 @@ public class Player : MonoBehaviour, IDisappear
     }
     private void Start()
     {
+        Time.timeScale = 1;
         m_unGroundedTimerHolder = m_ungroundedTimer;
         m_savedPlayerPosition = transform.position;
     }
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour, IDisappear
     public void Disappear()
     {
         m_ungroundedTimer = m_unGroundedTimerHolder;
+        m_playerMovement.ResetVelocity();
         transform.position = m_savedPlayerPosition;
     }
 }

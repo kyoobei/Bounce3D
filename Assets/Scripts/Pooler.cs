@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pooler : MonoBehaviour
 {
     [SerializeField] private int m_numberOfCopies = 0;
-    [SerializeField] private GameObject m_objectToCopy;
+    [SerializeField] private GameObject m_objectToCopy = null;
 
     private List<GameObject> m_releasedCopies = new List<GameObject>();
     private Queue<GameObject> m_queueCopies = new Queue<GameObject>();

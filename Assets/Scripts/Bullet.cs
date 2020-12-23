@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour
 {
     private const float TIMER_RETURN = 3f;
     [SerializeField] private float m_bulletStrength = 5f;
-    [SerializeField] private Rigidbody m_bulletRigidBody;
+    [SerializeField] private Rigidbody m_bulletRigidBody = null;
     private Pooler m_pooler;
     public void SetPoolerForReturning(Pooler pooler)
     {
